@@ -4,5 +4,5 @@ const calculateBasket = require("./calculateBasket");
 const items = process.argv.slice(2);
 const { total, errors } = calculateBasket(items);
 
-console.log("Total Price:", total);
+console.log(`Total Price: ${total}p`);
 console.log("Errors:", errors);

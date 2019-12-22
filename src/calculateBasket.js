@@ -38,7 +38,9 @@ module.exports = items => {
   return {
     total: Number(totalPrice.toFixed(2)),
     errors: errors.length
-      ? `Could not scan the items: ${errors.join(", ")}`
-      : "All items scanned successfully!"
+      ? `${errors.length} Errors - Could not scan the items: ${errors.join(
+          ", "
+        )}`
+      : "0 Errors - All items scanned successfully!"
   };
 };

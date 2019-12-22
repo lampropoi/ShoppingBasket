@@ -5,7 +5,7 @@ describe("Calculate Basket", () => {
     const items = [];
     const { total, errors } = calculateBasket(items);
     expect(total).toEqual(0.0);
-    expect(errors).toEqual("All items scanned successfully!");
+    expect(errors).toEqual("0 Errors - All items scanned successfully!");
   });
 
   test("it should return 1.58 when input is: 2 Apples, 3 Bananas and 2 pens", () => {
@@ -20,7 +20,7 @@ describe("Calculate Basket", () => {
     ];
     const { total, errors } = calculateBasket(items);
     expect(total).toEqual(1.58);
-    expect(errors).toEqual("All items scanned successfully!");
+    expect(errors).toEqual("0 Errors - All items scanned successfully!");
   });
 
   test("it should return 3.29 when input is: 4 Apples, 2 Oranges, 2 Pens, 1 Pineapple and 2 Bananas", () => {
@@ -39,7 +39,7 @@ describe("Calculate Basket", () => {
     ];
     const { total, errors } = calculateBasket(items);
     expect(total).toEqual(3.29);
-    expect(errors).toEqual("All items scanned successfully!");
+    expect(errors).toEqual("0 Errors - All items scanned successfully!");
   });
 
   test("it should errors for some input and 1.46 when input is: 1 Apple, 1 Orange and 3 Bananas", () => {
@@ -55,6 +55,8 @@ describe("Calculate Basket", () => {
     ];
     const { total, errors } = calculateBasket(items);
     expect(total).toEqual(1.46);
-    expect(errors).toEqual("Could not scan the items: apple, Spinach, banana");
+    expect(errors).toEqual(
+      "3 Errors - Could not scan the items: apple, Spinach, banana"
+    );
   });
 });
