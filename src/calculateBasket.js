@@ -1,22 +1,25 @@
-const prices = require("./prices");
+const products = require("./products");
 
 module.exports = items => {
   let totalPrice = 0;
   const scannedItems = {};
   const errors = [];
   items.forEach(item => {
-    if (prices[item]) {
+    if (products[item]) {
+      // if item exists in the list of products, calculate new total
       if (!scannedItems[item]) {
         scannedItems[item] = 1;
-        totalPrice += prices[item].price;
+        totalPrice += products[item].price;
       } else {
-        // check for getFree bargains
         scannedItems[item]++;
-        if (scannedItems[item] % prices[item].getFreeBargain !== 0) {
-          totalPrice += prices[item].price;
+        // check for bargains and if there is no one based on the items already scanned
+        // and the bargains of a product, add price to total
+        if (scannedItems[item] % products[item].getFreeBargain !== 0) {
+          totalPrice += products[item].price;
         }
       }
     } else {
+      // if item doesnt exist in the list of products, add an error for that item
       errors.push(item);
     }
   });
