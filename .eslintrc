@@ -1,0 +1,35 @@
+{
+  "extends": ["airbnb-base", "plugin:jest/recommended", "prettier"],
+  "rules": {
+    "arrow-parens": ["error", "as-needed"],
+    "comma-dangle": ["error", "never"],
+    "global-require": "off",
+    "import/extensions": ["error", "never"],
+    "import/no-dynamic-require": "off",
+    "max-len": ["error", 150],
+    "no-console": ["off"],
+    "no-plusplus": "off",
+    "no-param-reassign": ["error", { "props": false }],
+    "no-restricted-globals": "off",
+    "no-return-assign": "off",
+    "no-underscore-dangle": "off",
+    "prefer-destructuring": "off"
+  },
+  "parserOptions": {
+    "ecmaVersion": 9,
+    "sourceType": "module"
+  },
+  "env": {
+    "node": true,
+    "es6": true,
+    "jest/globals": true
+  },
+  "plugins": ["jest"],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".mjs"]
+      }
+    }
+  }
+}
