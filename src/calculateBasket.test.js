@@ -5,7 +5,7 @@ describe("Calculate Basket", () => {
     const items = [];
     const { total, errors } = calculateBasket(items);
     expect(total).toEqual(0.0);
-    expect(errors).toEqual("All items scanned successfully");
+    expect(errors).toEqual("All items scanned successfully!");
   });
 
   test("it should return 1.58", () => {
@@ -20,7 +20,7 @@ describe("Calculate Basket", () => {
     ];
     const { total, errors } = calculateBasket(items);
     expect(total).toEqual(1.58);
-    expect(errors).toEqual("All items scanned successfully");
+    expect(errors).toEqual("All items scanned successfully!");
   });
 
   test("it should return 3.29", () => {
@@ -39,7 +39,7 @@ describe("Calculate Basket", () => {
     ];
     const { total, errors } = calculateBasket(items);
     expect(total).toEqual(3.29);
-    expect(errors).toEqual("All items scanned successfully");
+    expect(errors).toEqual("All items scanned successfully!");
   });
 
   test("it should return 1.46", () => {
